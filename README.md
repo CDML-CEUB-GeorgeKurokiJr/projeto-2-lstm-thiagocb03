@@ -1,1 +1,25 @@
-🌍 Análise de Interdependência Geopolítica: Petróleo vs. Metais (Estreito de Ormuz)Este projeto utiliza Redes Neurais Recorrentes (LSTM e GRU) para modelar e prever a correlação entre o setor energético e o setor de mineração, focando no impacto logístico e geopolítico do Estreito de Ormuz.🚀 Premissa do EstudoO Estreito de Ormuz é o ponto de estrangulamento mais crítico do comércio global. Nossa tese propõe que a instabilidade nesta região não afeta apenas o escoamento de Petróleo, mas dita diretamente a viabilidade econômica da produção de commodities industriais (Metais), devido ao custo energético de extração e processamento.🛠️ Objetivos TécnicosQuantificar a Defasagem Temporal: Medir o tempo de resposta entre choques no setor de energia e a reação dos preços de metais.Modelagem de Séries Temporais: Implementação de fluxos independentes via PyTorch para evitar vazamento de dados (data leakage).Projeção Multivariada: Estimativas de curto prazo para ativos críticos.📊 Configuração de Ativos (Clusters)O modelo captura a dinâmica entre ativos "Âncora" (locais do Golfo) e "Globais" (multinacionais):AtivoTickerClusterPapel EstratégicoSaudi Aramco2222.SRPetróleoReferência em oferta bruta e risco local.TotalEnergiesTTEPetróleoFluxo global de energia e GNL.Ma'aden1211.SRMetaisTransformação industrial e custo energético regional.Rio TintoRIOMetaisSensibilidade logística e demanda mundial.📉 Diagnóstico Estatístico (Interpretador Automático)A correlação dos retornos previstos é avaliada através do Coeficiente de Pearson ($r$):$r > 0.7$ (Alta Sincronia): Mercado em bloco (Risk-On/Off). Baixa diversificação.$0.3 \leq r \leq 0.7$ (Moderada): Influência mútua com independência técnica parcial.$r < 0.3$ (Alta Diversificação): Cenário de Hedge. Setores agem como contrapesos naturais.💻 Tecnologias UtilizadasPython 3.10+PyTorch (Deep Learning)Pandas & NumPy (Manipulação de dados)Seaborn & Matplotlib (Visualização estatística)Yahoo Finance API (Extração de dados históricos)📂 Como executarClone o repositório: git clone https://github.com/seu-usuario/seu-repositorio.gitInstale as dependências: pip install -r requirements.txtExecute o notebook no Google Colab ou Jupyter: analise_ormuz.ipynb
+🌍 Análise de Interdependência Geopolítica
+Modelagem via LSTM/GRU para o Mercado de Petróleo e Metais
+1. Premissa Central do Estudo
+O Estreito de Ormuz atua como um "ponto de pressão" único no comércio global. A nossa tese propõe que a instabilidade logística nesta região não afeta apenas o escoamento de energia (Petróleo), mas dita diretamente a viabilidade econômica da produção de commodities industriais (Metais).
+
+2. Objetivos da Modelagem
+Através da combinação de redes neurais profundas (LSTM e GRU), este estudo busca:
+
+Quantificar a Defasagem Temporal: Entender quanto tempo leva para um choque no setor energético impactar o preço dos metais.
+
+Medir a Força da Correlação: Identificar o grau de interdependência entre esses dois aglomerados (clusters) aparentemente distintos.
+
+Projeção Multivariada: Gerar estimativas de curto prazo para ativos críticos como Aramco, TotalEnergies, Rio Tinto e Freeport.
+
+3. Estrutura Técnica do Pipeline
+A análise está dividida em dois fluxos principais de processamento:
+
+Fluxo 1 (Energia): Foco em Petróleo Brent/WTI e gigantes do setor (Saudi Aramco / TotalEnergies).
+
+Fluxo 2 (Metais): Foco em Minério de Ferro e Metais Não-Ferrosos (Rio Tinto / Freeport-McMoRan).
+
+Coeficiente (r),Classificação,Significado Estratégico
+>0.7,Alta Sincronia,Risco de Concentração: O mercado opera em blocos (Risk-On ou Risk-Off). Não há diversificação; setores se movem juntos.
+0.3 a 0.7,Moderada,"Influência Mútua: Os setores compartilham pressões macro, mas mantêm independência técnica individual."
+<0.3,Alta Diversificação,Hedge (Proteção): Cenário ideal para carteira. Os setores são independentes; um protege a queda do outro.
