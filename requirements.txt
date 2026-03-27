@@ -1,0 +1,13 @@
+---
+
+### 2. Conteúdo do `requirements.txt`
+Este arquivo permite que outras pessoas instalem todas as bibliotecas que você usou com apenas um comando. Crie um arquivo novo chamado `requirements.txt` e cole isto dentro:
+
+```text
+torch
+pandas
+numpy
+matplotlib
+yfinance
+scikit-learn
+jupyter
